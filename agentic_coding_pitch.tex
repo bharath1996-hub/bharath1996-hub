@@ -119,47 +119,61 @@
 \end{frame}
 
 %==============================================================================
-% SLIDE 3: Benefits for Quantum Computing Researchers
+% SLIDE 3: Key Use Cases for Our Research
 %==============================================================================
-\begin{frame}{Why Quantum Researchers Should Care}
+\begin{frame}{Key Use Cases for Quantum Researchers}
 
 \begin{columns}[T]
-\begin{column}{0.55\textwidth}
-\textbf{\textcolor{quantumBlue}{\faAtom\ Quantum-Specific Use Cases}}
-\vspace{0.2cm}
+\begin{column}{0.48\textwidth}
+
+\textbf{\textcolor{quantumBlue}{\faFileAlt\ 1. Paper $\rightarrow$ Implementation}}
+\vspace{0.1cm}
 \begin{itemize}
-    \item[\faCheck] \textbf{Circuit Design:} Generate and optimize quantum circuits with automatic parameter tuning
-    \item[\faCheck] \textbf{Simulation Pipelines:} Build end-to-end Qiskit/Cirq workflows autonomously
-    \item[\faCheck] \textbf{Error Analysis:} Implement noise models, run benchmarks, iterate on results
-    \item[\faCheck] \textbf{Paper $\rightarrow$ Code:} Translate algorithm papers into working implementations
-    \item[\faCheck] \textbf{Documentation:} Auto-generate docstrings, README, and usage examples
+    \item Feed the agent a paper's algorithm section
+    \item Get working code to \textbf{test ideas faster}
+    \item Iterate on variations in hours, not weeks
 \end{itemize}
+\vspace{0.2cm}
+
+\textbf{\textcolor{quantumBlue}{\faTasks\ 2. Parallel Task Processing}}
+\vspace{0.1cm}
+\begin{itemize}
+    \item Run multiple agents on different tasks
+    \item Build simulation while another writes tests
+    \item \textcolor{claudeOrange}{\small\faExclamationTriangle\ Be mindful of context switching}
+\end{itemize}
+
 \end{column}
 
-\begin{column}{0.42\textwidth}
-\textbf{\textcolor{claudeOrange}{\faChartLine\ The Multiplier Effect}}
+\begin{column}{0.48\textwidth}
+
+\textbf{\textcolor{quantumBlue}{\faDatabase\ 3. Data Analysis \& Discovery}}
+\vspace{0.1cm}
+\begin{itemize}
+    \item Process massive experimental datasets
+    \item Agent surfaces \textbf{unexpected insights}
+    \item Finds patterns you weren't looking for
+\end{itemize}
 \vspace{0.2cm}
-\begin{tikzpicture}[scale=0.9]
-    % Research focus box
-    \node[draw, rounded corners, fill=quantumBlue!20, minimum width=4.5cm, minimum height=1.2cm, align=center] at (0,2.5) {\textbf{Your Focus}\\Physics \& Research};
 
-    % Arrow
-    \draw[->, very thick, claudeOrange] (0,1.7) -- (0,0.8);
+\textbf{\textcolor{quantumBlue}{\faCode\ 4. Codebase Refactoring}}
+\vspace{0.1cm}
+\begin{itemize}
+    \item Agent understands complex legacy code
+    \item Refactors autonomously with explanations
+    \item Makes onboarding \& collaboration easier
+\end{itemize}
 
-    % Agent handles box
-    \node[draw, rounded corners, fill=claudeOrange!20, minimum width=4.5cm, minimum height=1.8cm, align=center] at (0,-0.2) {\textbf{Agent Handles}\\Boilerplate code\\Debugging\\Testing\\Git operations};
-\end{tikzpicture}
-
-\vspace{0.3cm}
-\small\textit{``I spent my PhD debugging; now I can focus on the science.''}
 \end{column}
 \end{columns}
 
-\vspace{0.3cm}
+\vspace{0.4cm}
 \begin{center}
-\fbox{\parbox{0.85\textwidth}{\centering
-\large \textbf{Bottom Line:} Agentic coding turns weeks of implementation into days,\\letting you iterate on \textit{ideas} faster than ever before.
-}}
+\begin{tikzpicture}
+\node[draw, rounded corners, fill=darkBg, text=white, minimum width=13cm, minimum height=1.2cm, align=center] {
+    \textbf{The Multiplier Effect:} Spend your time on \textit{physics} and \textit{ideas},\\not on implementation details and debugging.
+};
+\end{tikzpicture}
 \end{center}
 
 \end{frame}
