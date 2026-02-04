@@ -223,40 +223,24 @@
         .hero-visual {
             position: relative;
             animation: fadeIn 1.5s ease-out 0.8s both;
-        }
-
-        .quantum-circuit {
-            width: 100%;
-            height: 400px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background: var(--secondary-bg);
-            padding: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .circuit-line {
-            position: absolute;
-            height: 1px;
-            background: var(--text-muted);
-            width: 100%;
-            left: 0;
-        }
-
-        .circuit-gate {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            border: 2px solid var(--accent-blue);
-            border-radius: 8px;
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
-            color: var(--accent-blue);
-            background: rgba(77, 212, 255, 0.1);
-            box-shadow: 0 0 20px var(--quantum-glow);
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent-blue);
+            box-shadow: 0 0 40px var(--quantum-glow), 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @keyframes fadeInUp {
@@ -609,16 +593,8 @@
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="quantum-circuit">
-                    <div class="circuit-line" style="top: 20%;"></div>
-                    <div class="circuit-line" style="top: 40%;"></div>
-                    <div class="circuit-line" style="top: 60%;"></div>
-                    <div class="circuit-line" style="top: 80%;"></div>
-                    
-                    <div class="circuit-gate" style="left: 15%; top: 12%;">H</div>
-                    <div class="circuit-gate" style="left: 35%; top: 32%;">RX</div>
-                    <div class="circuit-gate" style="left: 55%; top: 52%;">CZ</div>
-                    <div class="circuit-gate" style="left: 75%; top: 72%;">M</div>
+                <div class="profile-photo">
+                    <img src="photo.jpg" alt="Dr. Bharadwaj Chowdary Mummaneni">
                 </div>
             </div>
         </div>
@@ -630,29 +606,16 @@
             <div class="section-label">Areas of Focus</div>
             <h2 class="section-title">Research Interests</h2>
             <p class="section-description">
-                Exploring the intersection of quantum computing, quantum chemistry, and machine learning to solve challenging problems in molecular simulation and materials science.
+                Translating quantum algorithms from theoretical concepts to practical hardware implementations.
             </p>
         </div>
         
         <div class="research-grid">
             <div class="research-card">
-                <div class="research-icon">🔬</div>
-                <h3>NISQ Algorithms</h3>
-                <p>
-                    Developing near-term quantum algorithms for molecular systems using variational methods and Trotterization on IBM Heron quantum processors. Focus on NMR spectroscopy simulation and quantum dynamics.
-                </p>
-                <div class="research-tags">
-                    <span class="tag">VQE</span>
-                    <span class="tag">Trotterization</span>
-                    <span class="tag">IBM Quantum</span>
-                </div>
-            </div>
-
-            <div class="research-card">
                 <div class="research-icon">🧠</div>
                 <h3>Neural Quantum States</h3>
                 <p>
-                    Implementing neural network-based wavefunctions using NetKet for time-dependent variational Monte Carlo. Applications to strongly coupled spin systems and interpretability analysis using Restricted Boltzmann Machines.
+                    Investigating transformer architectures and RBMs as neural quantum state representations. Developing interpretability methods for chemical spin systems using NetKet and t-VMC.
                 </p>
                 <div class="research-tags">
                     <span class="tag">NetKet</span>
@@ -665,7 +628,7 @@
                 <div class="research-icon">⚡</div>
                 <h3>Block Encoding & QSP</h3>
                 <p>
-                    Researching fault-tolerant approaches for Hamiltonian simulation using Block Encoding and Quantum Signal Processing. Developing resource-efficient algorithms with symmetry-adapted circuits.
+                    Co-developing variational Block-Encoding protocols with quantum signal processing for improved resource efficiency over traditional LCU methods in Hamiltonian simulation.
                 </p>
                 <div class="research-tags">
                     <span class="tag">QSVT</span>
@@ -675,41 +638,15 @@
             </div>
 
             <div class="research-card">
-                <div class="research-icon">🔮</div>
-                <h3>Quantum Chemistry</h3>
+                <div class="research-icon">🔬</div>
+                <h3>NISQ Algorithms</h3>
                 <p>
-                    Applying quantum algorithms to molecular systems including singlet fission dynamics for solar cells and CO₂ capture using Metal-Organic Frameworks. Focus on strongly correlated systems requiring quantum chemistry precision.
+                    Developing quantum optimization algorithms for industrial applications. Deployed VQE, QAOA, and annealing approaches on IBM quantum computers and D-Wave systems.
                 </p>
                 <div class="research-tags">
-                    <span class="tag">Molecular Simulation</span>
-                    <span class="tag">Materials Science</span>
-                    <span class="tag">Energy Applications</span>
-                </div>
-            </div>
-
-            <div class="research-card">
-                <div class="research-icon">🎯</div>
-                <h3>Quantum Many-Body Physics</h3>
-                <p>
-                    Studying Heisenberg spin chains and many-body systems using subspace diagonalization methods. Expertise in connecting classical and quantum approaches to strongly coupled systems.
-                </p>
-                <div class="research-tags">
-                    <span class="tag">Spin Systems</span>
-                    <span class="tag">Subspace Methods</span>
-                    <span class="tag">Condensed Matter</span>
-                </div>
-            </div>
-
-            <div class="research-card">
-                <div class="research-icon">🔧</div>
-                <h3>Quantum Control</h3>
-                <p>
-                    Exploring quantum control theory and pulse-level optimization, connecting variational algorithm experience to quantum hardware control challenges for improved algorithm implementation.
-                </p>
-                <div class="research-tags">
-                    <span class="tag">Pulse Optimization</span>
-                    <span class="tag">Hardware Control</span>
-                    <span class="tag">Error Mitigation</span>
+                    <span class="tag">VQE</span>
+                    <span class="tag">QAOA</span>
+                    <span class="tag">D-Wave</span>
                 </div>
             </div>
         </div>
