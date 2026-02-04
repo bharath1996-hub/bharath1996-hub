@@ -1,0 +1,167 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% Custom colors
+\definecolor{claudeOrange}{RGB}{217, 119, 87}
+\definecolor{quantumBlue}{RGB}{64, 123, 178}
+\definecolor{darkBg}{RGB}{40, 44, 52}
+
+\setbeamercolor{title}{fg=white,bg=claudeOrange}
+\setbeamercolor{frametitle}{fg=white,bg=claudeOrange}
+\setbeamercolor{block title}{fg=white,bg=quantumBlue}
+
+\title{\textbf{Agentic Coding for Quantum Researchers}}
+\subtitle{From Chatbox to Autonomous Collaborator}
+\author{Quantum Computing Research Team}
+\date{\today}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+\titlepage
+\end{frame}
+
+%==============================================================================
+% SLIDE 1: What is Agentic Coding?
+%==============================================================================
+\begin{frame}{What is Agentic Coding?}
+
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+\textbf{\textcolor{claudeOrange}{\faRobot\ Traditional Chatbox}}
+\begin{itemize}
+    \item Single prompt $\rightarrow$ single response
+    \item Copy-paste code manually
+    \item No file system access
+    \item Cannot execute or test code
+    \item You are the ``glue'' between steps
+\end{itemize}
+\end{column}
+
+\begin{column}{0.48\textwidth}
+\textbf{\textcolor{quantumBlue}{\faCogs\ Agentic Workflow (Claude Code)}}
+\begin{itemize}
+    \item Multi-step autonomous execution
+    \item Reads, writes, edits files directly
+    \item Runs terminal commands (git, pytest, etc.)
+    \item Iterates on errors automatically
+    \item \textbf{AI handles the entire workflow}
+\end{itemize}
+\end{column}
+\end{columns}
+
+\vspace{0.5cm}
+\begin{center}
+\begin{tikzpicture}
+\node[draw, rounded corners, fill=darkBg, text=white, minimum width=12cm, minimum height=1cm] {
+    \textbf{Key Insight:} The AI becomes a \textit{collaborator} that takes action, not just an \textit{advisor} that suggests.
+};
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+
+%==============================================================================
+% SLIDE 2: The Workflow Difference
+%==============================================================================
+\begin{frame}{The Workflow Difference: A Real Example}
+
+\textbf{Task:} ``Implement a variational quantum eigensolver simulation''
+
+\vspace{0.3cm}
+
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\textcolor{claudeOrange}{\textbf{\faComments\ Chatbox Workflow}}
+\begin{enumerate}
+    \item Ask for VQE code snippet
+    \item Copy code to file manually
+    \item Run it $\rightarrow$ error!
+    \item Go back, paste error
+    \item Get fix, apply manually
+    \item Repeat 5-10 times...
+    \item Manually add tests
+    \item Manually commit to git
+\end{enumerate}
+\textbf{Time:} Hours of context-switching
+\end{column}
+
+\begin{column}{0.45\textwidth}
+\textcolor{quantumBlue}{\textbf{\faTerminal\ Agentic Workflow}}
+\begin{enumerate}
+    \item Give high-level task
+    \item \textit{Agent explores codebase}
+    \item \textit{Agent writes implementation}
+    \item \textit{Agent runs, sees errors}
+    \item \textit{Agent fixes autonomously}
+    \item \textit{Agent writes tests \& runs them}
+    \item \textit{Agent commits with message}
+    \item You review the PR
+\end{enumerate}
+\textbf{Time:} Minutes of supervision
+\end{column}
+\end{columns}
+
+\vspace{0.3cm}
+\begin{center}
+\colorbox{quantumBlue!20}{\parbox{0.8\textwidth}{\centering
+\textbf{You shift from ``doing'' to ``directing'' --- focus on physics, not boilerplate.}
+}}
+\end{center}
+
+\end{frame}
+
+%==============================================================================
+% SLIDE 3: Benefits for Quantum Computing Researchers
+%==============================================================================
+\begin{frame}{Why Quantum Researchers Should Care}
+
+\begin{columns}[T]
+\begin{column}{0.55\textwidth}
+\textbf{\textcolor{quantumBlue}{\faAtom\ Quantum-Specific Use Cases}}
+\vspace{0.2cm}
+\begin{itemize}
+    \item[\faCheck] \textbf{Circuit Design:} Generate and optimize quantum circuits with automatic parameter tuning
+    \item[\faCheck] \textbf{Simulation Pipelines:} Build end-to-end Qiskit/Cirq workflows autonomously
+    \item[\faCheck] \textbf{Error Analysis:} Implement noise models, run benchmarks, iterate on results
+    \item[\faCheck] \textbf{Paper $\rightarrow$ Code:} Translate algorithm papers into working implementations
+    \item[\faCheck] \textbf{Documentation:} Auto-generate docstrings, README, and usage examples
+\end{itemize}
+\end{column}
+
+\begin{column}{0.42\textwidth}
+\textbf{\textcolor{claudeOrange}{\faChartLine\ The Multiplier Effect}}
+\vspace{0.2cm}
+\begin{tikzpicture}[scale=0.9]
+    % Research focus box
+    \node[draw, rounded corners, fill=quantumBlue!20, minimum width=4.5cm, minimum height=1.2cm, align=center] at (0,2.5) {\textbf{Your Focus}\\Physics \& Research};
+
+    % Arrow
+    \draw[->, very thick, claudeOrange] (0,1.7) -- (0,0.8);
+
+    % Agent handles box
+    \node[draw, rounded corners, fill=claudeOrange!20, minimum width=4.5cm, minimum height=1.8cm, align=center] at (0,-0.2) {\textbf{Agent Handles}\\Boilerplate code\\Debugging\\Testing\\Git operations};
+\end{tikzpicture}
+
+\vspace{0.3cm}
+\small\textit{``I spent my PhD debugging; now I can focus on the science.''}
+\end{column}
+\end{columns}
+
+\vspace{0.3cm}
+\begin{center}
+\fbox{\parbox{0.85\textwidth}{\centering
+\large \textbf{Bottom Line:} Agentic coding turns weeks of implementation into days,\\letting you iterate on \textit{ideas} faster than ever before.
+}}
+\end{center}
+
+\end{frame}
+
+\end{document}
