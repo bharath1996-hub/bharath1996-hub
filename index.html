@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Bharadwaj Chowdary Mummaneni - Quantum Algorithm Researcher</title>
+    <title>Dr. Bharadwaj Chowdary Mummaneni</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-bg: #0a0e27;
-            --secondary-bg: #141b3d;
-            --accent-blue: #4dd4ff;
-            --accent-purple: #b57edc;
-            --accent-pink: #ff6b9d;
-            --text-primary: #e8eaf6;
-            --text-secondary: #9fa8da;
-            --text-muted: #5c6bc0;
-            --border-color: #283593;
-            --quantum-glow: rgba(77, 212, 255, 0.3);
+            --bg-primary: #FAF9F6;
+            --bg-secondary: #FFFFFF;
+            --bg-accent: #F5F0EB;
+            --text-primary: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #6b6b6b;
+            --accent: #D97757;
+            --accent-light: #E8A991;
+            --border: #e5e5e5;
+            --shadow: rgba(0, 0, 0, 0.06);
         }
 
         * {
@@ -27,50 +27,16 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'IBM Plex Mono', monospace;
-            background: var(--primary-bg);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* Quantum background effect */
-        .quantum-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.4;
-        }
-
-        .quantum-particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--accent-blue);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-blue);
-            animation: float linear infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) translateX(50px);
-                opacity: 0;
-            }
+            font-size: 16px;
         }
 
         /* Navigation */
@@ -78,15 +44,15 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 2rem 4rem;
-            background: rgba(10, 14, 39, 0.95);
-            backdrop-filter: blur(10px);
+            padding: 1.25rem 3rem;
+            background: rgba(250, 249, 246, 0.9);
+            backdrop-filter: blur(20px);
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border);
         }
 
         nav .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -94,17 +60,17 @@
         }
 
         .logo {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-blue);
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-primary);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            letter-spacing: -0.02em;
         }
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
@@ -112,28 +78,12 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            font-weight: 300;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--accent-blue);
-            transition: width 0.3s ease;
+            font-weight: 400;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-blue);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+            color: var(--accent);
         }
 
         /* Hero Section */
@@ -141,100 +91,106 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 4rem 4rem;
-            position: relative;
+            padding: 8rem 3rem 6rem;
         }
 
         .hero-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1fr 400px;
             gap: 6rem;
             align-items: center;
         }
 
-        .hero-content h1 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 4.5rem;
-            line-height: 1.1;
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 1s ease-out;
         }
 
-        .hero-content .subtitle {
-            font-size: 1.3rem;
+        .hero-content h1 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .hero-content h1 span {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .hero-content .lead {
+            font-size: 1.15rem;
             color: var(--text-secondary);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .hero-content .description {
-            font-size: 1rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
             line-height: 1.8;
-            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
-        .cta-buttons {
+        .cta-group {
             display: flex;
-            gap: 1.5rem;
-            animation: fadeInUp 1s ease-out 0.6s both;
+            gap: 1rem;
+            align-items: center;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 6px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 400;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
             cursor: pointer;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            color: var(--primary-bg);
-            box-shadow: 0 4px 20px rgba(77, 212, 255, 0.3);
+            background: var(--text-primary);
+            color: var(--bg-primary);
         }
 
         .btn-primary:hover {
-            box-shadow: 0 6px 30px rgba(77, 212, 255, 0.5);
-            transform: translateY(-2px);
+            background: #333;
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
-            border: 1px solid var(--accent-blue);
-            color: var(--accent-blue);
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
-            background: rgba(77, 212, 255, 0.1);
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
         }
 
-        /* Visual Element */
+        /* Profile Photo */
         .hero-visual {
-            position: relative;
-            animation: fadeIn 1.5s ease-out 0.8s both;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
 
         .profile-photo {
-            width: 320px;
-            height: 320px;
-            border-radius: 50%;
+            width: 340px;
+            height: 340px;
+            border-radius: 20px;
             overflow: hidden;
-            border: 4px solid var(--accent-blue);
-            box-shadow: 0 0 40px var(--quantum-glow), 0 20px 60px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 30px 60px var(--shadow), 0 10px 20px var(--shadow);
         }
 
         .profile-photo img {
@@ -243,107 +199,79 @@
             object-fit: cover;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Section Styling */
+        /* Sections */
         section {
-            padding: 6rem 4rem;
-            max-width: 1400px;
+            padding: 6rem 3rem;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
+            max-width: 650px;
             margin-bottom: 4rem;
         }
 
         .section-label {
-            font-size: 0.85rem;
-            color: var(--accent-purple);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 0.12em;
             margin-bottom: 1rem;
-            font-weight: 500;
         }
 
         .section-title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 3rem;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
             color: var(--text-primary);
             margin-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .section-description {
             font-size: 1.1rem;
             color: var(--text-muted);
-            max-width: 700px;
+            line-height: 1.7;
         }
 
-        /* Research Areas */
+        /* Research Cards */
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
         .research-card {
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
             padding: 2.5rem;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .research-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .research-card:hover::before {
-            transform: scaleX(1);
         }
 
         .research-card:hover {
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 40px rgba(77, 212, 255, 0.2);
-            transform: translateY(-5px);
+            border-color: var(--accent-light);
+            box-shadow: 0 20px 40px var(--shadow);
+            transform: translateY(-4px);
         }
 
-        .research-icon {
-            font-size: 2.5rem;
+        .research-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--bg-accent);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
         .research-card h3 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.5rem;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 500;
             margin-bottom: 1rem;
             color: var(--text-primary);
         }
@@ -355,161 +283,144 @@
             margin-bottom: 1.5rem;
         }
 
-        .research-tags {
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
         }
 
         .tag {
-            padding: 0.4rem 0.8rem;
-            background: rgba(77, 212, 255, 0.1);
-            border: 1px solid var(--accent-blue);
-            border-radius: 4px;
+            padding: 0.35rem 0.75rem;
+            background: var(--bg-accent);
+            border-radius: 6px;
             font-size: 0.8rem;
-            color: var(--accent-blue);
+            color: var(--text-secondary);
+            font-weight: 500;
         }
 
         /* Publications */
         .publication-list {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1rem;
         }
 
         .publication-item {
-            background: var(--secondary-bg);
-            border-left: 3px solid var(--accent-purple);
-            padding: 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            padding: 1.75rem 2rem;
+            border-radius: 12px;
+            transition: all 0.2s ease;
         }
 
         .publication-item:hover {
-            border-left-color: var(--accent-blue);
-            background: rgba(20, 27, 61, 0.8);
+            border-color: var(--accent-light);
         }
 
         .publication-title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.3rem;
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.1rem;
+            font-weight: 500;
             color: var(--text-primary);
-            margin-bottom: 0.8rem;
-        }
-
-        .publication-authors {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
-        .publication-venue {
-            color: var(--accent-purple);
-            font-size: 0.85rem;
-            font-style: italic;
+        .publication-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        /* Experience Timeline */
+        .publication-meta strong {
+            color: var(--accent);
+        }
+
+        /* Timeline */
         .timeline {
-            position: relative;
-            padding-left: 3rem;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(180deg, var(--accent-blue), var(--accent-purple));
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
         .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            padding-left: 2rem;
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -3.5rem;
-            top: 0.3rem;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--accent-blue);
-            box-shadow: 0 0 0 4px var(--secondary-bg), 0 0 15px var(--accent-blue);
+        .timeline-item:last-child {
+            border-bottom: none;
         }
 
         .timeline-date {
-            color: var(--accent-purple);
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent);
             font-weight: 500;
         }
 
-        .timeline-title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 1.4rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
+        .timeline-content h3 {
+            font-family: 'Newsreader', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
         }
 
-        .timeline-org {
+        .timeline-content .org {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 1rem;
         }
 
-        .timeline-description {
+        .timeline-content p {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.7;
         }
 
-        /* Contact Section */
+        /* Contact */
         #contact {
+            background: var(--bg-accent);
+            border-radius: 24px;
+            padding: 5rem;
             text-align: center;
+            margin: 4rem auto;
         }
 
-        .contact-links {
+        .contact-grid {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1rem;
             margin-top: 3rem;
+            flex-wrap: wrap;
         }
 
         .contact-link {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 0.8rem;
-            padding: 1.2rem 2rem;
-            background: var(--secondary-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            gap: 0.6rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
             color: var(--text-secondary);
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .contact-link:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-            box-shadow: 0 5px 20px rgba(77, 212, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        .contact-icon {
-            font-size: 1.5rem;
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px var(--shadow);
         }
 
         /* Footer */
         footer {
-            padding: 3rem 4rem;
+            padding: 3rem;
             text-align: center;
-            border-top: 1px solid var(--border-color);
             color: var(--text-muted);
             font-size: 0.9rem;
         }
@@ -518,21 +429,31 @@
         @media (max-width: 1024px) {
             .hero-container {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 4rem;
+                text-align: center;
             }
 
-            .hero-content h1 {
-                font-size: 3.5rem;
+            .hero-content {
+                max-width: 100%;
             }
 
-            .nav-links {
-                gap: 1.5rem;
+            .cta-group {
+                justify-content: center;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
             }
         }
 
         @media (max-width: 768px) {
             nav {
-                padding: 1.5rem 2rem;
+                padding: 1rem 1.5rem;
             }
 
             .nav-links {
@@ -540,7 +461,7 @@
             }
 
             .hero {
-                padding: 6rem 2rem 3rem;
+                padding: 6rem 1.5rem 4rem;
             }
 
             .hero-content h1 {
@@ -548,22 +469,26 @@
             }
 
             section {
-                padding: 4rem 2rem;
+                padding: 4rem 1.5rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
 
-            .research-grid {
-                grid-template-columns: 1fr;
+            .profile-photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            #contact {
+                padding: 3rem 1.5rem;
+                border-radius: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Background particles -->
-    <div class="quantum-bg" id="quantumBg"></div>
 
     <!-- Navigation -->
     <nav>
@@ -582,14 +507,14 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1>Quantum Algorithm Researcher</h1>
-                <p class="subtitle">Bridging NISQ, Neural Quantum States, and Fault-Tolerant Computing</p>
-                <p class="description">
-                    Quantum computing researcher with 3+ years of experience developing quantum algorithms and working with quantum hardware platforms. Currently leading a research group of 7 researchers at Fraunhofer IAO focused on quantum simulations, translating quantum algorithms from theoretical concepts to practical hardware implementations on IBM and D-Wave systems.
+                <div class="hero-label">Quantum Algorithm Researcher</div>
+                <h1>Building the bridge between <span>quantum theory</span> and real-world applications</h1>
+                <p class="lead">
+                    I lead a research group at Fraunhofer IAO, translating quantum algorithms from theoretical concepts to practical implementations on IBM and D-Wave hardware.
                 </p>
-                <div class="cta-buttons">
-                    <a href="#research" class="btn btn-primary">Explore Research</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <div class="cta-group">
+                    <a href="#research" class="btn btn-primary">Explore my work</a>
+                    <a href="Bharadwaj_resume_.pdf" class="btn btn-secondary" download>Download CV</a>
                 </div>
             </div>
             <div class="hero-visual">
@@ -603,21 +528,21 @@
     <!-- Research Areas -->
     <section id="research">
         <div class="section-header">
-            <div class="section-label">Areas of Focus</div>
-            <h2 class="section-title">Research Interests</h2>
+            <div class="section-label">Research Focus</div>
+            <h2 class="section-title">Areas of expertise</h2>
             <p class="section-description">
-                Translating quantum algorithms from theoretical concepts to practical hardware implementations.
+                My work spans the full spectrum of quantum computing approaches, from near-term applications to fault-tolerant methods.
             </p>
         </div>
-        
+
         <div class="research-grid">
             <div class="research-card">
-                <div class="research-icon">🧠</div>
+                <div class="icon">🧠</div>
                 <h3>Neural Quantum States</h3>
                 <p>
-                    Investigating transformer architectures and RBMs as neural quantum state representations. Developing interpretability methods for chemical spin systems using NetKet and t-VMC.
+                    Investigating transformer architectures and RBMs as neural quantum state representations, with focus on interpretability methods for chemical spin systems.
                 </p>
-                <div class="research-tags">
+                <div class="tags">
                     <span class="tag">NetKet</span>
                     <span class="tag">RBM</span>
                     <span class="tag">t-VMC</span>
@@ -625,25 +550,25 @@
             </div>
 
             <div class="research-card">
-                <div class="research-icon">⚡</div>
+                <div class="icon">⚡</div>
                 <h3>Block Encoding & QSP</h3>
                 <p>
-                    Co-developing variational Block-Encoding protocols with quantum signal processing for improved resource efficiency over traditional LCU methods in Hamiltonian simulation.
+                    Co-developing variational Block-Encoding protocols with quantum signal processing for improved resource efficiency in Hamiltonian simulation.
                 </p>
-                <div class="research-tags">
+                <div class="tags">
                     <span class="tag">QSVT</span>
                     <span class="tag">LCU</span>
-                    <span class="tag">Hamiltonian Simulation</span>
+                    <span class="tag">Hamiltonian Sim</span>
                 </div>
             </div>
 
             <div class="research-card">
-                <div class="research-icon">🔬</div>
+                <div class="icon">🔬</div>
                 <h3>NISQ Algorithms</h3>
                 <p>
-                    Developing quantum optimization algorithms for industrial applications. Deployed VQE, QAOA, and annealing approaches on IBM quantum computers and D-Wave systems.
+                    Developing quantum optimization algorithms for industrial applications, deployed on IBM quantum computers and D-Wave annealing systems.
                 </p>
-                <div class="research-tags">
+                <div class="tags">
                     <span class="tag">VQE</span>
                     <span class="tag">QAOA</span>
                     <span class="tag">D-Wave</span>
@@ -652,48 +577,37 @@
         </div>
     </section>
 
-    <!-- Publications & Presentations -->
+    <!-- Publications -->
     <section id="publications">
         <div class="section-header">
-            <div class="section-label">Academic Contributions</div>
-            <h2 class="section-title">Publications & Presentations</h2>
+            <div class="section-label">Publications</div>
+            <h2 class="section-title">Selected work</h2>
         </div>
-        
+
         <div class="publication-list">
             <div class="publication-item">
                 <div class="publication-title">Resource-Efficient Variational Block-Encoding</div>
-                <div class="publication-authors">Rullkötter, L., <strong>Mummaneni, B.</strong>, et al.</div>
-                <div class="publication-venue">Quantum Computing Research</div>
+                <div class="publication-meta">Rullkötter, L., <strong>Mummaneni, B.</strong>, et al.</div>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Hidden Unit Interpretability in RBM Quantum States: Encoding Antiferromagnetic Order in Heisenberg Spin Rings</div>
-                <div class="publication-authors"><strong>Mummaneni, B.</strong></div>
-                <div class="publication-venue">Under Review</div>
+                <div class="publication-meta"><strong>Mummaneni, B.</strong> · Under Review</div>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Unlocking Quantum Optimization: A Use Case Study on NISQ Systems</div>
-                <div class="publication-authors">Sturm, A., <strong>Mummaneni, B.</strong>, Rullkötter, L.</div>
-                <div class="publication-venue">Quantum Optimization Research</div>
+                <div class="publication-meta">Sturm, A., <strong>Mummaneni, B.</strong>, Rullkötter, L.</div>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Quantum Annealing based Feature Selection in Machine Learning</div>
-                <div class="publication-authors">Pranjic, D., <strong>Mummaneni, B.C.</strong>, et al.</div>
-                <div class="publication-venue">Machine Learning & Quantum Computing</div>
-            </div>
-
-            <div class="publication-item">
-                <div class="publication-title">Multi-Qubit Superconducting Architectures: A Comprehensive Study of Design and Analysis of Transmon and Fluxonium Qubits</div>
-                <div class="publication-authors">Ram, S.S., <strong>Mummaneni, B.</strong>, et al.</div>
-                <div class="publication-venue">Superconducting Quantum Computing</div>
+                <div class="publication-meta">Pranjic, D., <strong>Mummaneni, B.C.</strong>, et al.</div>
             </div>
 
             <div class="publication-item">
                 <div class="publication-title">Laser controlled implementation of CNOT, Hadamard, SWAP, and Pauli gates in a 3d-4f molecular magnet</div>
-                <div class="publication-authors"><strong>Mummaneni, B.C.</strong>, et al.</div>
-                <div class="publication-venue">Journal of Physical Chemistry Letters</div>
+                <div class="publication-meta"><strong>Mummaneni, B.C.</strong>, et al. · J. Phys. Chem. Lett.</div>
             </div>
         </div>
     </section>
@@ -701,114 +615,71 @@
     <!-- Experience -->
     <section id="experience">
         <div class="section-header">
-            <div class="section-label">Professional Journey</div>
+            <div class="section-label">Background</div>
             <h2 class="section-title">Experience & Education</h2>
         </div>
-        
+
         <div class="timeline">
             <div class="timeline-item">
-                <div class="timeline-date">August 2022 - Present</div>
-                <h3 class="timeline-title">Quantum Algorithm Researcher</h3>
-                <div class="timeline-org">Fraunhofer IAO, Stuttgart, Germany</div>
-                <p class="timeline-description">
-                    Leading a research group of 7 researchers focused on quantum simulations. Managing state-funded projects (SEQUOIA-II, KQCBW) and collaborations with industry partners including Simerics, Dieter Schwarz Stiftung, and EnBW. Developing quantum optimization algorithms, variational Block-Encoding protocols, and neural quantum state methods. Deployed algorithms on IBM quantum computers and D-Wave systems.
-                </p>
+                <div class="timeline-date">2022 — Present</div>
+                <div class="timeline-content">
+                    <h3>Quantum Algorithm Researcher</h3>
+                    <div class="org">Fraunhofer IAO, Stuttgart</div>
+                    <p>Leading a team of 7 researchers on quantum simulations. Managing state-funded projects and industry collaborations with Simerics, Dieter Schwarz Stiftung, and EnBW.</p>
+                </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">June 2018 - June 2022</div>
-                <h3 class="timeline-title">PhD in Condensed Matter Physics</h3>
-                <div class="timeline-org">Technische Universität Kaiserslautern, Germany</div>
-                <p class="timeline-description">
-                    Thesis: "Ultrafast Spin Dynamics in Molecular Magnets". Developed theoretical methodology for quantum logic operations in molecular magnets. Collaborated with international experimental groups to validate theoretical predictions and provide frameworks for understanding magnetic systems.
-                </p>
+                <div class="timeline-date">2018 — 2022</div>
+                <div class="timeline-content">
+                    <h3>PhD in Condensed Matter Physics</h3>
+                    <div class="org">TU Kaiserslautern, Germany</div>
+                    <p>Thesis: "Ultrafast Spin Dynamics in Molecular Magnets". Developed theoretical methodology for quantum logic operations in molecular magnets.</p>
+                </div>
             </div>
 
             <div class="timeline-item">
-                <div class="timeline-date">June 2013 - April 2018</div>
-                <h3 class="timeline-title">Master of Science in Physics</h3>
-                <div class="timeline-org">Sri Sathya Sai Institute of Higher Learning, India</div>
-                <p class="timeline-description">
-                    Focus on Material Science and Density Functional Theory studies. Published 5 conference publications on thermoelectric materials and ultrafast spectroscopy, investigating approaches to improve material efficiency.
-                </p>
+                <div class="timeline-date">2013 — 2018</div>
+                <div class="timeline-content">
+                    <h3>MSc in Physics</h3>
+                    <div class="org">Sri Sathya Sai Institute of Higher Learning, India</div>
+                    <p>Focus on Material Science and DFT studies. Published 5 conference papers on thermoelectric materials and ultrafast spectroscopy.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact">
-        <div class="section-header">
-            <div class="section-label">Let's Connect</div>
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-description">
-                Interested in collaboration, discussions about quantum computing, or opportunities in quantum algorithm research? Feel free to reach out.
-            </p>
-        </div>
-        
-        <div class="contact-links">
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Let's collaborate</h2>
+        <p class="section-description" style="max-width: 500px; margin: 1rem auto 0;">
+            Interested in quantum computing research or potential collaborations? I'd love to hear from you.
+        </p>
+
+        <div class="contact-grid">
             <a href="mailto:Bharathsai270@gmail.com" class="contact-link">
-                <span class="contact-icon">📧</span>
-                <span>Email</span>
+                📧 Email
             </a>
             <a href="https://www.linkedin.com/in/bharadwaj-chowdary-mummaneni" class="contact-link" target="_blank">
-                <span class="contact-icon">💼</span>
-                <span>LinkedIn</span>
+                💼 LinkedIn
             </a>
             <a href="https://github.com/bharath1996-hub" class="contact-link" target="_blank">
-                <span class="contact-icon">💻</span>
-                <span>GitHub</span>
+                💻 GitHub
             </a>
             <a href="https://scholar.google.com/citations?user=bharadwaj" class="contact-link" target="_blank">
-                <span class="contact-icon">📚</span>
-                <span>Google Scholar</span>
-            </a>
-            <a href="Bharadwaj_resume_.pdf" class="contact-link" download>
-                <span class="contact-icon">📄</span>
-                <span>Resume</span>
+                📚 Scholar
             </a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Dr. Bharadwaj Chowdary Mummaneni. Quantum Algorithm Researcher.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Exploring the quantum frontier, one algorithm at a time.</p>
+        <p>© 2026 Dr. Bharadwaj Chowdary Mummaneni</p>
     </footer>
 
     <script>
-        // Create quantum particles
-        const quantumBg = document.getElementById('quantumBg');
-        const particleCount = 30;
-        
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'quantum-particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDuration = (15 + Math.random() * 20) + 's';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            quantumBg.appendChild(particle);
-        }
-
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
+        // Smooth reveal on scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -816,31 +687,15 @@
                     entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        // Observe research cards
-        document.querySelectorAll('.research-card').forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = `all 0.6s ease ${index * 0.1}s`;
-            observer.observe(card);
-        });
-
-        // Observe timeline items
-        document.querySelectorAll('.timeline-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(-30px)';
-            item.style.transition = `all 0.6s ease ${index * 0.2}s`;
-            observer.observe(item);
-        });
-
-        // Observe publication items
-        document.querySelectorAll('.publication-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateX(-20px)';
-            item.style.transition = `all 0.5s ease ${index * 0.15}s`;
-            observer.observe(item);
+        document.querySelectorAll('.research-card, .publication-item, .timeline-item').forEach((el, i) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = `all 0.5s ease ${i * 0.1}s`;
+            observer.observe(el);
         });
     </script>
+
 </body>
 </html>
